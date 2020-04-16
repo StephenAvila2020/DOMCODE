@@ -108,6 +108,20 @@ for (let i = 0; i < students.length; i++) {
     )
 }
 
+const studentDivs = document.querySelectorAll(".student")
+for (let i = 0; i < studentDivs.length; i++) {
+    let studentComponent = "#container"
+    console.log("this is student div", studentDivs[i])
+    if (students[i].score >= 60) {
+        studentDivs[i].classList.add("passing")
+    } else {
+        studentDivs[i].classList.add("failing")
+    }
+    console.log(studentComponent);
+    
+
+}
+
 // Instead of defining four arguments for the createStudentComponent function, and then passing the individual properties when it is invoked, refactor the function to accept the entire object as a single argument.
 
 // Then refactor your string interpolation code to use the object properties.
