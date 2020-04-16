@@ -79,25 +79,55 @@ const students = [
     }
 ]
 
+// You, as a software developer, would write a function that could generate HTML to represent any of those students. The way you can change the output, or logic, of a function is by using function arguments.
+
+// It's time for you to rewrite the function to accept the information it needs to do its job. It's job is to generate an HTML representation of a student, so it must define arguments to store that input.
+
+// You are using 3 of the 4 properties on each student object to build the HTML. You're not using score yet. Define those 3 arguments.
+
+const createStudentComponent = (name, subject, info, score) => {
+    return `
+        <div class="student">
+            <h1>${name}</h1>
+            <section>${subject}</section>
+            <aside>${info}</aside>
+            <section>${score}</section>
+        </div>
+    `
+}
+const studentContainer = document.querySelector("#container")
+
+
+for (let i = 0; i < students.length; i++) {
+    const student = students[i]
+    studentContainer.innerHTML += createStudentComponent(
+        student.name,
+        student.subject,
+        student.info,
+        student.score
+    )
+}
+
 // Instead of defining four arguments for the createStudentComponent function, and then passing the individual properties when it is invoked, refactor the function to accept the entire object as a single argument.
 
 // Then refactor your string interpolation code to use the object properties.
 
-function printStudentObjectsToDOM(studentsObject) {
-    console.log(studentsObject)
-    return `
-<article>
-    <h3>${studentsObject.name}</h3>
-    <p>${studentsObject.subject}</p>
-    <p>${studentsObject.info}</p>
-    <p>${studentsObject.score}</p>
-    <p>Languages: HTML, CSS, JavaScript</p>
-</article>`
-}
+// function printStudentObjectsToDOM(studentsObject) {
+//     console.log(studentsObject)
+//     return `
+// <article>
+//     <h3>${studentsObject.name}</h3>
+//     <p>${studentsObject.subject}</p>
+//     <p>${studentsObject.info}</p>
+//     <p>${studentsObject.score}</p>
+//     <p>Languages: HTML, CSS, JavaScript</p>
+// </article>`
+// }
 
-for (let i = 0; i < students.length; i++){
-    let htmlString = printStudentObjectsToDOM
-       (students[i]);
-    console.log(htmlString)
-    document.querySelector(".student-container").innerHTML += htmlString;
-}
+// for (let i = 0; i < students.length; i++){
+//     let htmlString = printStudentObjectsToDOM
+//        (students[i]);
+//     console.log(htmlString)
+//     document.querySelector(".student-container").innerHTML += htmlString;
+// }
+
