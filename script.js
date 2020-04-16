@@ -87,10 +87,10 @@ const students = [
 
 const createStudentComponent = (name, subject, info, score) => {
     return `
-        <div class="student">
-            <h1>${name}</h1>
-            <section>${subject}</section>
-            <aside>${info}</aside>
+        <div class="student" >
+            <h1 class="xx-large">${name}</h1>
+            <section class="bordered","dashed", "section--padded">${subject}</section>
+            <aside class ="pushRight">${info}</aside>
             <section>${score}</section>
         </div>
     `
@@ -116,7 +116,7 @@ for (let i = 0; i < studentDivs.length; i++) {
         studentDivs[i].classList.add("passing")
     } else {
         studentDivs[i].classList.add("failing")
-    }
+    } 
     console.log(studentComponent);
     
 
