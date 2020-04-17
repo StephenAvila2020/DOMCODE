@@ -32,3 +32,7 @@
 .failing {
     color: orange;
 }
+
+#heading {
+    background-color: lightcoral;
+}
